@@ -1,0 +1,136 @@
+.tool {
+    padding: 292px 0 452px;
+    &__spot {
+        position: absolute;
+        left: -200px;
+        top: -170px;
+        z-index: -1;
+    }
+    &__wrapper {
+        display: flex;
+    }
+    &__col {
+        position: relative;
+    }
+    &__img {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+        &-1 {
+            background: url("../../img/tool1.png") center center/ 80% no-repeat;
+            width: 250px;
+            height: 150px;
+            left: 340px;
+            top: -90px;
+        }
+        &-2 {
+            border: none;
+            background: url("../../img/tool2.png") center center/ 100% no-repeat;
+            width: 230px;
+            height: 45px;
+            left: 160px;
+            top: 97px;
+        }
+        &-3 {
+            background: url("../../img/tool3.png") center center/ 73% no-repeat;
+            width: 192px;
+            height: 114px;
+            left: 27px;
+            top: 160px;
+        }
+        &-4 {
+            background: url("../../img/tool4.png") center center/ 67% no-repeat;
+            width: 180px;
+            height: 190px;
+            left: 463px;
+            top: 97px;
+        }
+        &-5 {
+            background: url("../../img/tool5.png") center center/ 76% no-repeat;
+            width: 193px;
+            height: 117px;
+            left: 281px;
+            top: 203px;
+            background-color: black;
+            z-index: 1;
+        }
+        &-6 {
+            background: url("../../img/tool6.png") center center/ 80% no-repeat;
+            width: 193px;
+            height: 117px;
+            left: 208px;
+            top: 304px;
+        }
+        &-7 {
+            border: 0;
+            background: url("../../img/tool7.png") center center/ 100% no-repeat;
+            width: 281px;
+            height: 57px;
+            left: 449px;
+            top: 377px;
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .tool {
+        padding: 220px 0 320px;
+    }
+}
+
+@media(max-width: 870px) {
+    .tool {
+        padding-top: 100px;
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__col {
+            margin: auto;
+            width: 337px;
+        }
+        &__img {
+            &-1 {
+                top: 159px;
+                left: -45px;
+                width: 144px;
+                height: 86px;
+            }
+            &-2 {
+                top: 83px;
+                left: 21px;
+                width: 109px;
+                height: 21px;
+            }
+            &-3 {
+                display: none;
+            }
+            &-4 {
+                top: 30px;
+                left: auto;
+                right: 0px;
+                width: 85px;
+                height: 90px;
+            }
+            &-5 {
+                top: 66px;
+                left: auto;
+                right: 80px;
+                width: 90px;
+                height: 55px;
+            }
+            &-6 {
+                top: 126px;
+                left: 134px;
+                width: 91px;
+                height: 55px;
+            }
+            &-7 {
+                top: 217px;
+                left: auto;
+                right: -84px;
+                width: 296px;
+                height: 59px;
+            }
+        }
+    }
+}

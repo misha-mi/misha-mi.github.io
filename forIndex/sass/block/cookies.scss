@@ -1,0 +1,53 @@
+.cookies {
+    --height: 93px;
+    position: fixed;
+    z-index: 2;
+    bottom: -93px;
+    height: var(--height);
+    background-color: #212834;
+    width: 100vw;
+    transition: all 0.5s;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--height);
+    }
+    &__text {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &__button {
+        position: absolute;
+        right: 54px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 132px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #FFFFFF;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover {
+            box-shadow: 0px 0px 11px 4px #605CEA;
+        }
+    }
+    &_show {
+        bottom: 0;
+    }
+}
+
+@media(max-width: 870px) {
+    .cookies {
+        &__text {
+            width: 60%;
+            font-size: 12px;
+        }
+        &__button {
+            position: static;
+            transform: none;
+            width: 92px;
+        }
+    }
+}

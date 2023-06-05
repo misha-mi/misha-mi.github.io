@@ -1,0 +1,64 @@
+@import "base/normalize.scss";
+@import "base/font.scss";
+
+* {
+    box-sizing: border-box;
+    font-family: "Noto sans";
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+
+body {
+    background-color: #000000;
+}
+
+.hidden {
+    overflow-x: hidden;
+}
+
+.container {
+    margin: auto;
+    width: 1240px;
+    height: 100%;
+    &_position_relative {
+        position: relative;
+    }
+}
+
+@media(max-width: 1300px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+@media(max-width: 1100px) {
+    .container {
+        width: 800px;
+    }
+}
+
+@media(max-width: 870px) {
+    .container {
+        width:90%;
+    }
+}
+
+
+@import "block/title.scss";
+@import "block/app.scss";
+@import "block/content.scss";
+@import "block/shadow.scss";
+@import "block/header.scss";
+@import "block/cookies.scss";
+@import "block/invitation.scss";
+@import "block/mission.scss";
+@import "block/scanner.scss";
+@import "block/tool.scss";
+@import "block/qr-code.scss";
+@import "block/orders.scss";
+@import "block/spot.scss";
+@import "block/notab.scss";
+@import "block/contact.scss";
+@import "block/download.scss";
+@import "block/footer.scss";

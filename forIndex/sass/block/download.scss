@@ -1,0 +1,17 @@
+.download {
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+    }
+    &__app {
+        margin-top: 32px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .download__app {
+        align-items: center;
+    }
+}

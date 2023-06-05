@@ -1,0 +1,33 @@
+.spot {
+    width: 875px;
+    height: 875px;
+    border-radius: 100%;
+    background: linear-gradient(20deg, #F101BF 15%, #0066FF 85%);
+    opacity: 0.2;
+    filter: blur(125px);
+    &_crooked {
+        border-top: 200px solid #FA00FF;
+        border-right: 170px solid #FA00FF;
+        opacity: 0.4;
+        width: 700px;
+        height: 500px;
+        filter: blur(150px);
+        border-radius: 30%
+    }
+    &_size_350 {
+        width: 350px;
+        height: 350px;
+        filter: blur(100px);
+    }
+    &_size_250 {
+        width: 200px;
+        height: 200px;
+        filter: blur(60px);
+    }
+    &_opacity_25 {
+        opacity: 0.25;
+    }
+    &_opacity_3 {
+        opacity: 0.3;
+    }
+}

@@ -1,0 +1,38 @@
+.title {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 35px;
+    &_font-size_64 {
+        font-size: 64px;
+    }
+    &_font-size_51 {
+        font-size: 51px;
+    }
+}
+
+
+@media(max-width: 1300px) {
+    .title {
+        &_font-size_64 {
+            font-size: 52px
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .title {
+        font-size: 28px;
+        &_font-size_64 {
+            font-size: 48px;
+        }
+    }
+}
+
+@media(max-width: 870px) {
+    .title {
+        font-size: 24px;
+        &_font-size_64 {
+            font-size: 48px;
+        }
+    }
+}

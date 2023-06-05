@@ -1,0 +1,275 @@
+.qr-code {
+    min-height: 1000px;
+    padding-top: 537px;
+    position: relative;
+    &__bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 750px;
+        display: flex;
+        &-dj {
+            height: 100%;
+            width: 100%;
+            background: url("../../img/DJ.jpg") right center/ cover no-repeat;
+        } 
+        &-drink {
+            height: 100%;
+            width: 90%;
+            background: url("../../img/nightlife.svg") 500px 4%/ auto no-repeat, 
+                        url("../../img/drink.jpg") left center/ cover no-repeat;
+                        
+        }
+    }
+    &__filter-dj {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#000000 3%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+    }
+    &__app {
+        margin-top: 58px;
+    }
+    &__step {
+        position: absolute;
+        &-1 {
+            top: -317px;
+            left: 55%;
+            transform: translateX(-50%);
+        }
+        &-2 {
+            top: 0px;
+            right: -40px;
+        }
+    }
+    &__step-3 {
+        margin-top: 270px;
+        height: 960px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &-img {
+            width: 333px;
+        }
+    }
+    &__spot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+    &__notab {
+        position: absolute;
+        z-index: -1;
+        font-size: 220px;
+        font-weight: 700;
+        color: rgba(55, 43, 67, 0.4);
+        user-select: none;
+        &-1 {
+            left: -220px;
+            top: 20%;
+        }
+        &-2 {
+            left: -220px;
+            bottom: 20%;
+        }
+        &-3 {
+            right: -220px;
+            top: 20%;
+        }
+        &-4 {
+            right: -220px;
+            bottom: 20%;
+        }
+    }
+    &__text {
+        position: absolute;
+        left: 75%;
+        top: 46%;
+        font-family: "Montserrat";
+        font-size: 21px;
+        &:before {
+            content: url("../../img/arrow.svg");
+            position: absolute;
+            top: -80px;
+            left: -81px;
+        }
+    }
+    &__generate {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title-end {
+        width: 379px;
+    }
+    &__text-end {
+        font-size: 18px;
+        width: 292px;
+    }
+}
+
+@media(max-width: 1300px) {
+    .qr-code {
+        &__step {
+            width: 265px;
+        }
+        &__step-1 {
+            left: 60%;
+        }
+        &__step-3 {
+            height: 900px;
+            margin-top: 90px;
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .qr-code {
+        padding-top: 400px;
+        &__bg {
+            height: 500px;
+            &-drink {     
+            background: url("../../img/nightlife.svg") 50px 4%/ auto no-repeat, 
+                        url("../../img/drink.jpg") left center/ auto 100% no-repeat;
+            }
+        }
+        &__step {
+            width: 209px;
+        }
+        &__step-1 {
+            left: 56%;
+            top: -243px;
+        }
+        &__step-2 {
+            right: 0;
+            top: 130px;
+        }
+        &__step-3 {
+            height: 700px;
+        }
+        &__notab {
+            font-size: 160px;
+        }
+    }
+}
+
+@media(max-width: 870px) {
+    .qr-code {
+        &__step {
+            transform: none;
+            margin: auto;
+            display: block;
+            position: static;
+            width: 280px;
+            &-1 {
+                margin-top: 300px;
+            }
+            &-2 {
+                margin-top: 50px;
+            }
+            &-3 {
+                margin-top: 160px;
+            }
+        }
+        &__bg {
+            display: block;
+            &-dj {
+                background: url("../../img/DJ.jpg") center center/cover no-repeat;
+            }
+            &-drink {
+                width: 100%;
+                height: 377px;
+                position: absolute;
+                top: 661px;
+                right: 0;
+                background-size: auto, 70%;
+                background-position: 35%, right;
+            }
+        }
+        &__filter-drink {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0) 72.76%,#000 91.92%);
+        }
+        &__generate {
+            display: block;
+            top: -70px;
+            bottom: auto;
+        }
+        &__text {
+            font-size: 18px;
+            top: auto;
+            bottom: 0;
+            left: 60%;
+            &::before {
+                transform: rotate(35deg);
+                left: 70px;
+                top: -92px
+            }
+        }
+        &__text-end {
+            margin-top: 24px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .qr-code__app {
+        align-items: center;
+    }
+}
+
+@media(max-width: 520px) {
+    .qr-code {
+        padding-top: 240px;
+        &__step-1 {
+            margin-top: 245px;
+        }
+        &__step-3 {
+            height: 500px;
+        }
+        &__qr {
+            width: 181px;
+        }
+        &__bg {
+            height: 335px;
+            &-drink {
+                top: 550px;
+                height: 297px;
+                background-size: 88px, auto 100%;
+                background-position: 40px, right;
+            }
+        }
+        &__filter-drink {
+            background: linear-gradient(rgba(0,0,0,0) 56.76%,#000 89.92%);
+        }
+        &__notab {
+            font-size: 56px;
+            color: rgba(55,43,67,.6);
+            &-1 {
+                left: -40px;
+                top: 35%;
+            }
+            &-2 {
+                left: -40px;
+                bottom: 35%;
+            }
+            &-3 {
+                right: -40px;
+                top: 35%;
+            }
+            &-4 {
+                right: -40px;
+                bottom: 35%;
+            }
+        }
+        &__text {
+            left: 52%;
+        }
+    }
+}

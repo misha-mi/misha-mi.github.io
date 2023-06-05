@@ -1,0 +1,185 @@
+.header {
+    padding: 38px 0 24px;
+    &__row {
+        display: flex;
+        width: 411px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 195px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__icon {
+        width: 40.5%;
+    }
+    &__title {
+        font-family: "Gilroy";
+        font-size: 32px;
+    }
+    &__login { 
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        transition: all 0.5s;
+        &:hover {
+            transform: translateY(-5px)
+        }
+    }
+    &__link {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+    &__slogan { 
+        margin-top: 143px;
+    }
+    &__text {
+        margin: 129px 0 0 105px;
+        max-width: 370px;
+        font-size: 20px;
+        font-weight: 300;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -130px;
+            top: -90px;
+            display: block;
+            background: #605CEA;
+            opacity: 0.5;
+            width: 125px;
+            height: 125px;
+            filter: blur(50px);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: -130px;
+            top: 8px;
+            display: block;
+            background: white;
+            width: 140px;
+            height: 4px;
+            transform: rotate(120deg);
+        }
+    }
+    &__shadow {
+        width: 27%;
+        position: absolute;
+        top: 150px;
+        right: 97px;
+    }
+    &__smartphone {
+        width: 100%;
+    }
+    &__row-app {
+        margin-top: 290px;
+        padding-right: 63px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__spot {
+        position: absolute;
+        top: 0px;
+        right: -100px;
+        z-index: -1;
+    }
+}
+
+@media(max-width: 1300px) {
+    .header {
+        &__logo {
+            width: 160px;
+        }
+        &__title {
+            font-size: 28px;
+        }
+        &__slogan {
+            margin-top: 90px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+        &__shadow {
+            top: 100px;
+            right: 56px;
+        }
+        &__row-app {
+            margin-top: 240px;
+            padding-right: 0;
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .header {
+        &__row {
+            width: auto;
+        }
+        &__shadow {
+            right: 0;
+        }
+        &__row-app {
+            margin-top: 130px;
+        }
+    }
+}
+
+@media(max-width: 870px) {
+    .header {
+        &__icon-login {
+            display: none;
+        }
+        &__slogan {
+            margin-top: 70px;
+            width: 70%;
+            font-size: 42px;
+        }
+        &__text {
+            margin: 0;
+            margin-top: 24px;
+            width: 70%;
+            &::after {
+                display: none;
+            }
+            &::before {
+                display: none;
+            }
+        }
+        &__shadow {
+            top: 90px;
+            width: 161px;
+            left: 75%;
+        }
+        &__row-app {
+            margin-top: 125px;
+            flex-direction: column;
+        }
+        &__app {
+            margin-top: 34px;
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .header {
+        &__logo {
+            width: 100px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+        &__slogan {
+            font-size: 35px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
+}

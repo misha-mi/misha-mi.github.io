@@ -1,0 +1,74 @@
+.footer {
+    min-height: 200px;
+    padding: 150px 0 85px;
+    overflow: hidden;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__name {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    &__text {
+        font-family: "Avenir";
+        font-size: 18px;
+        font-style: normal;
+    }
+    &__spot {
+        position: absolute;
+        top: 0px;
+        left: -140px;
+        z-index: -1;
+    }
+    &_hover {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &_mt_18{
+        margin-top: 18px;
+    }
+    &_mt_20{
+        margin-top: 20px;
+    }
+    &_mb_25{
+        margin-bottom: 25px;
+    }
+}
+
+@media(max-width: 1300px) {
+    .footer {
+        padding-top: 70px;
+    }
+}
+
+@media(max-width: 600px) {
+    .footer {
+        padding-top: 70px;
+        text-align: center;
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__column {
+            margin-top: 58px;
+            order: 1;
+        }
+        &_order {
+            margin-top: 0;
+            order: 0;
+        }
+        &_mb_25 {
+            margin-bottom: 14px;
+        }
+        &_mt_20 {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        &_display_ib{
+            font-size: 14px;
+            display: inline-block;
+        }
+    }
+}
