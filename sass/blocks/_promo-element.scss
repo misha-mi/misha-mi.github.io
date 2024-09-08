@@ -1,0 +1,25 @@
+.promo-element {
+  width: 280px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  &__circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    background: linear-gradient(
+      45deg,
+      $main-elements-color 30%,
+      $add-elements-color
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__desc {
+    font-size: 20px;
+    color: $main-text-color;
+    text-align: center;
+  }
+}

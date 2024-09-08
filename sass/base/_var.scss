@@ -1,0 +1,27 @@
+$main-color: #5ab9ea;
+$add-main-color: #84ceeb;
+$main-elements-color: #8860d0;
+$add-elements-color: #c1c8e4;
+$main-text-color: #ffffff;
+$add-text-color: #000000;
+$add-color: #d9d9d9;
+
+@mixin shadow($property, $color) {
+  box-shadow: -$property $property $property $color;
+}
+
+@mixin inshadow($property, $color) {
+  box-shadow: -$property $property $property $color inset;
+}
+
+@mixin double-shadow($property, $color) {
+  box-shadow: -$property $property $property $color,
+    -$property $property $property $color inset;
+}
+
+@mixin title($color) {
+  font-family: "Lobster";
+  font-size: 38px;
+  line-height: 38px;
+  color: $color;
+}

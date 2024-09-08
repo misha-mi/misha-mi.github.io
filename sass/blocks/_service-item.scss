@@ -1,0 +1,71 @@
+.service-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 30px;
+  line-height: 30px;
+  gap: 20px;
+  & abbr {
+    position: relative;
+  }
+  &__main-circle {
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    border: 15px solid $main-color;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include double-shadow(4px, rgba(0, 0, 0, 0.25));
+  }
+  [data-title]::after {
+    content: attr(data-title);
+    padding: 15px;
+    width: 250px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: -5px;
+    z-index: 1;
+    transform: translate(-55%, 100%);
+    background-color: $add-color;
+    font-size: 15px;
+    line-height: 15px;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+    @include shadow(4px, rgba(0, 0, 0, 0.25));
+  }
+  [data-title]::before {
+    content: "";
+    z-index: 1;
+    display: block;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid $add-color;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  [data-title]:hover::after {
+    opacity: 1;
+  }
+  [data-title]:hover::before {
+    opacity: 1;
+  }
+  &__in-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    background-color: $add-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 900;
+    @include shadow(4px, rgba(0, 0, 0, 0.25));
+  }
+}
