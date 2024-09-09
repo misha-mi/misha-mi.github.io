@@ -1,16 +1,8 @@
 .header {
-  position: relative;
-  height: 1950px;
-  padding: 60px;
-  background-image: url("../../img/headers-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
-  }
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
   &__info {
     width: 670px;
   }
@@ -25,6 +17,7 @@
     margin-top: 15px;
   }
   &__services {
+    height: 537px;
     width: 670px;
     position: relative;
     margin-top: 30px;

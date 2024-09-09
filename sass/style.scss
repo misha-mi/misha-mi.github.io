@@ -28,8 +28,18 @@ body {
   @include shadow(4px, rgba(0, 0, 0, 0.25));
 }
 
+.wrapper {
+  position: relative;
+  background-image: url("../../img/headers-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
 @import "blocks/service-item";
 @import "blocks/button";
-@import "blocks/promo-element";
+@import "blocks/round-button";
+@import "blocks/nav";
 @import "blocks/header";
-@import "blocks/promo";
+@import "blocks/about";
+@import "blocks/services";

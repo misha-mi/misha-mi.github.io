@@ -1,0 +1,85 @@
+.services {
+  padding: 40px;
+  background: linear-gradient($add-main-color, $main-color);
+  position: relative;
+  &__title {
+    text-align: center;
+    font-weight: 300;
+    @include title($main-text-color);
+  }
+  &__controllers-wrapper {
+    text-align: center;
+  }
+  &__controller {
+    margin-top: 20px;
+    height: 56px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 8px;
+    border-radius: 31px;
+    background-color: $main-text-color;
+    @include inshadow(4px, rgba(0, 0, 0, 0.25));
+  }
+  &__desc {
+    width: 800px;
+    margin: 32px auto 0;
+    text-align: center;
+    font-size: 24px;
+    color: $main-text-color;
+  }
+  &__wrapper {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-item {
+    width: 360px;
+    height: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: $main-text-color;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    @include shadow(6px, rgba(0, 0, 0, 0.25));
+    &__img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 15px;
+    }
+    &__title {
+      margin-top: 15px;
+      font-size: 22px;
+    }
+    &__divider {
+      margin: 8px auto 0;
+      width: 120px;
+      height: 2px;
+      background-color: $main-color;
+    }
+    &__desc {
+      margin-top: 11px;
+    }
+    &__neuron {
+      z-index: -1;
+      position: absolute;
+    }
+    &_up {
+      left: 8px;
+      top: 8px;
+    }
+    &_down {
+      bottom: 8px;
+      right: 8px;
+    }
+    &__button {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
