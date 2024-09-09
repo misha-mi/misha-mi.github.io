@@ -1,16 +1,18 @@
 .header {
   position: relative;
   height: 1950px;
-  &__bg {
-    height: 50%;
-  }
+  padding: 60px;
+  background-image: url("../../img/headers-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
   &__container {
-    margin: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  &__info {
     width: 670px;
-    position: absolute;
-    top: 0;
-    right: 50%;
-    transform: translateX(calc(75%));
   }
   &__title {
     @include title($main-color);
@@ -23,6 +25,7 @@
     margin-top: 15px;
   }
   &__services {
+    width: 670px;
     position: relative;
     margin-top: 30px;
   }
