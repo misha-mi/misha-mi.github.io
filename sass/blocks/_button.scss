@@ -7,11 +7,16 @@
   color: $main-text-color;
   cursor: pointer;
   @include shadow(4px, rgba(0, 0, 0, 0.25));
+  &_white {
+    background-color: $main-text-color;
+    color: $add-text-color;
+  }
   &_active {
     background: linear-gradient(
       45deg,
       $main-elements-color,
       $add-elements-color
     );
+    color: $main-text-color;
   }
 }
