@@ -18,6 +18,19 @@ body {
   width: 1200px;
   height: 100%;
   position: relative;
+  @media (max-width: 1200px) {
+    overflow: hidden;
+    width: 960px;
+  }
+  @media (max-width: 992px) {
+    width: 720px;
+  }
+  @media (max-width: 768px) {
+    width: 556px;
+  }
+  @media (max-width: 576px) {
+    width: calc(100% - 20px);
+  }
 }
 
 .block {
@@ -34,6 +47,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
+  @media (max-width: 992px) {
+    background-image: none;
+  }
 }
 
 @import "blocks/service-item";

@@ -41,7 +41,7 @@
     &-4 {
       position: absolute;
       top: 229px;
-      left: 230px;
+      left: 180px;
     }
     &-5 {
       position: absolute;
@@ -52,6 +52,16 @@
       position: absolute;
       top: 445px;
       left: 278px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    justify-content: center;
+    text-align: center;
+    &__services {
+      background: url("../../img/big-neuron.png") center center/280px no-repeat;
     }
   }
 }

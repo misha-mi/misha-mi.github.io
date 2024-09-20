@@ -14,3 +14,9 @@
     gap: 30px;
   }
 }
+
+@media (max-width: 992px) {
+  .nav__buttons {
+    justify-content: center;
+  }
+}
