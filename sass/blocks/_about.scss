@@ -26,7 +26,11 @@
     height: 370px;
     padding: 25px;
     border-radius: 20px;
-    background-color: $main-text-color;
+    background-image: linear-gradient(
+      45deg,
+      rgba($add-elements-color, 0.8) 30%,
+      $add-main-color
+    );
     transform: translateX(-50px);
     text-align: start;
     display: flex;
@@ -41,8 +45,12 @@
     gap: 10px;
   }
   &__sign {
+    height: 65px;
     flex-grow: 1;
     line-height: 0;
+    & img {
+      height: 100%;
+    }
   }
   &__slider {
     margin-top: 40px;
@@ -75,12 +83,75 @@
 
 @media (max-width: 992px) {
   .about {
-    width: 100%;
+    padding: 40px 0;
+    &__wrapper {
+      margin-top: 0px;
+      flex-direction: column;
+      background: url("../../img/neuron.png") center center/80% no-repeat;
+    }
+    &__img {
+      width: 300px;
+      height: 300px;
+      transform: translateY(20px);
+    }
+    &__info {
+      width: 100%;
+      height: auto;
+      gap: 20px;
+      transform: translateY(-30px);
+    }
     &__slider {
-      gap: 15px;
+      margin-top: 20px;
+      gap: 20px;
     }
     &__slide {
-      width: 310px;
+      width: 350px;
+      height: 200px;
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+    &_mt40 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 20px 0 40px;
+    &__img {
+      height: 250px;
+      width: 250px;
+    }
+    &__info {
+      font-size: 16px;
+    }
+    &__sign {
+      height: 50px;
+    }
+    &__slider {
+      justify-content: center;
+    }
+    &__slide {
+      &:nth-child(n + 2) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 30px 0 40px;
+    &__img {
+      width: 50%;
+      min-width: 180px;
+      height: 50%;
+      min-height: 180px;
+    }
+    &__info {
+      font-size: 14px;
     }
   }
 }

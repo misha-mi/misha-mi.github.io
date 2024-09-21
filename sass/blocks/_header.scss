@@ -21,6 +21,9 @@
     width: 670px;
     position: relative;
     margin-top: 30px;
+    &-bg {
+      display: none;
+    }
   }
   &__service {
     &-1 {
@@ -58,10 +61,152 @@
 
 @media (max-width: 992px) {
   .header {
+    padding-top: 90px;
     justify-content: center;
     text-align: center;
     &__services {
-      background: url("../../img/big-neuron.png") center center/280px no-repeat;
+      height: 350px;
+      &-bg {
+        display: inline;
+        margin-top: 40px;
+        height: 270px;
+      }
+    }
+    &__service {
+      &-1 {
+        top: 158px;
+        left: 0px;
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+      &-2 {
+        top: auto;
+        bottom: 0px;
+        left: auto;
+        right: 30px;
+      }
+      &-3 {
+        top: 20px;
+        left: 0px;
+        flex-direction: row-reverse;
+      }
+      &-4 {
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+      &-5 {
+        top: 165px;
+        left: auto;
+        right: 0px;
+      }
+      &-6 {
+        top: 0px;
+        right: 0px;
+        left: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 70px;
+    &__name {
+      margin-top: 6px;
+      font-size: 24px;
+    }
+    &__desc {
+      margin-top: 6px;
+      font-size: 16px;
+    }
+    &__services {
+      margin-top: 20px;
+      height: 420px;
+      &-bg {
+        position: relative;
+        margin-top: 25px;
+        display: block;
+        height: 380px;
+        transform: translateX(-140px);
+        z-index: -1;
+      }
+    }
+    &__service {
+      &-1 {
+        left: 243px;
+        top: 0;
+        flex-direction: row;
+        & br {
+          display: none;
+        }
+      }
+      &-2 {
+        bottom: auto;
+        top: 72px;
+        left: 283px;
+      }
+      &-3 {
+        top: 216px;
+        left: 293px;
+        flex-direction: row;
+      }
+      &-4 {
+        top: 360px;
+        bottom: auto;
+        left: 195px;
+        flex-direction: row;
+        text-align: start;
+      }
+      &-5 {
+        top: 144px;
+        left: 307px;
+      }
+      &-6 {
+        top: 288px;
+        left: 243px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    &__services {
+      height: auto;
+      &-bg {
+        margin-top: 0;
+        height: 290px;
+        transform: translateX(calc(-65px - (278px - 50vw)));
+      }
+    }
+    &__service {
+      &-1 {
+        left: calc(220px - (278px - 50vw));
+        top: 0;
+      }
+      &-2 {
+        left: calc(260px - (276px - 50vw));
+        top: 52px;
+      }
+      &-3 {
+        left: calc(260px - (278px - 50vw));
+        top: 156px;
+      }
+      &-4 {
+        left: calc(180px - (278px - 50vw));
+        top: 260px;
+      }
+      &-5 {
+        left: calc(283px - (278px - 50vw));
+        top: 104px;
+      }
+      &-6 {
+        left: calc(229px - (278px - 50vw));
+        top: 208px;
+      }
     }
   }
 }

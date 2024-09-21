@@ -33,6 +33,7 @@
     opacity: 0;
     transition: 0.5s;
     pointer-events: none;
+    text-align: start;
     @include shadow(4px, rgba(0, 0, 0, 0.25));
   }
   [data-title]::before {
@@ -67,5 +68,42 @@
     font-size: 32px;
     font-weight: 900;
     @include shadow(4px, rgba(0, 0, 0, 0.25));
+  }
+}
+
+@media (max-width: 992px) {
+  .service-item {
+    text-align: start;
+    font-size: 20px;
+    line-height: 20px;
+    gap: 6px;
+    &__main-circle {
+      width: 60px;
+      height: 60px;
+      border: 10px solid $main-color;
+    }
+    &__in-circle {
+      width: 31px;
+      height: 31px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .service-item {
+    font-size: 15px;
+    line-height: 15px;
+    gap: 6px;
+    &__main-circle {
+      width: 40px;
+      height: 40px;
+      border: 6px solid $main-color;
+    }
+    &__in-circle {
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+    }
   }
 }
