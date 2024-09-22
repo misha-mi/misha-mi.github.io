@@ -41,6 +41,7 @@
     &__img {
       object-fit: cover;
       width: 100%;
+      height: 132px;
       border-radius: 15px;
     }
     &__title {
@@ -78,6 +79,15 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .services-item {
+    height: 450px;
+    &__img {
+      height: 110px;
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .services {
     &__desc {
@@ -85,7 +95,9 @@
       font-size: 20px;
     }
     &-item {
-      height: 450px;
+      &__img {
+        height: 132px;
+      }
       &__desc {
         font-size: 18px;
       }
@@ -109,6 +121,9 @@
     &-item {
       width: 280px;
       height: 400px;
+      &__img {
+        height: 94px;
+      }
       &__title {
         font-size: 20px;
       }
@@ -140,6 +155,9 @@
     }
     &-item {
       width: 300px;
+      &__img {
+        height: 107px;
+      }
     }
     &-item:nth-child(n + 2) {
       display: none;
@@ -152,6 +170,18 @@
         padding: 6px;
         font-size: 12px;
       }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .services__controller {
+    height: auto;
+    gap: 3px;
+    padding: 4px;
+    & button {
+      padding: 6px 4px;
+      font-size: 12px;
     }
   }
 }

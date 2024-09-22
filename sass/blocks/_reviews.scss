@@ -56,3 +56,21 @@
     margin-top: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .reviews {
+    &__controller {
+      height: 46px;
+      & button {
+        font-size: 18px;
+        padding: 6px 16px;
+      }
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__slide {
+      height: 220px;
+    }
+  }
+}
