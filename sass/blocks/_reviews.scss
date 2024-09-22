@@ -74,3 +74,56 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .reviews {
+    &__controller {
+      height: auto;
+      gap: 4px;
+      padding: 4px;
+      & button {
+        padding: 6px;
+        font-size: 13px;
+      }
+    }
+    &__slider {
+      justify-content: center;
+    }
+    &__slide {
+      max-width: 480px;
+      height: auto;
+      width: 100%;
+    }
+    &__person {
+      gap: 10px;
+    }
+    &__circle {
+      width: 60px;
+      height: 60px;
+    }
+    &__name {
+      font-size: 20px;
+    }
+    &__profession {
+      font-size: 16px;
+    }
+    &__service {
+      font-size: 16px;
+    }
+    &__slide:nth-child(n + 2) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .reviews__controller {
+    height: auto;
+    gap: 3px;
+    padding: 4px;
+    & button {
+      padding: 6px 3px;
+      font-size: 12px;
+    }
+  }
+}
