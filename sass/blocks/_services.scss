@@ -2,6 +2,7 @@
   padding: 40px 0;
   background: linear-gradient($add-main-color, $main-color);
   position: relative;
+  overflow-x: hidden;
   &__title {
     text-align: center;
     font-weight: 300;
@@ -24,7 +25,6 @@
   }
   &__wrapper {
     margin-top: 32px;
-    gap: 20px;
     display: flex;
     justify-content: space-between;
   }
@@ -37,6 +37,8 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    flex-shrink: 0;
+    display: block;
     @include shadow(6px, rgba(0, 0, 0, 0.25));
     &__img {
       object-fit: cover;
@@ -82,6 +84,7 @@
 @media (max-width: 1200px) {
   .services-item {
     height: 450px;
+    width: 315px;
     &__img {
       height: 110px;
     }
@@ -95,15 +98,13 @@
       font-size: 20px;
     }
     &-item {
+      width: 350px;
       &__img {
         height: 132px;
       }
       &__desc {
         font-size: 18px;
       }
-    }
-    &-item:last-child {
-      display: none;
     }
   }
 }
@@ -119,7 +120,7 @@
       margin-top: 16px;
     }
     &-item {
-      width: 280px;
+      width: 270px;
       height: 400px;
       &__img {
         height: 94px;
@@ -150,17 +151,11 @@
       max-width: 400px;
       width: auto;
     }
-    &__wrapper {
-      justify-content: center;
-    }
     &-item {
       width: 300px;
       &__img {
         height: 107px;
       }
-    }
-    &-item:nth-child(n + 2) {
-      display: none;
     }
     &__controller {
       height: auto;
