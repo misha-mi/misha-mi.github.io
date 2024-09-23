@@ -34,7 +34,6 @@ window.addEventListener("DOMContentLoaded", () => {
     sliderLine.append(slides[1].cloneNode(true));
 
     sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
-    console.log(movedWidht, showId);
     setTimeout(() => (sliderLine.style.transition = "1s"));
 
     for (let i = 0; i < countShow; i++) {
@@ -45,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     buttonRight.addEventListener("click", (e) => {
       buttonRight.disabled = true;
+      sliderLine.style.transition = "1s";
       setTimeout(() => (buttonRight.disabled = false), 1000);
       slides[showId + countShow].style.opacity = 1;
       slides[showId + countShow].classList.remove("hide-slide");
@@ -58,19 +58,25 @@ window.addEventListener("DOMContentLoaded", () => {
       sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
       if (showId >= slides.length - 3) {
         showId = 1;
-        for (let i = showId; i < countShow + showId; i++) {
-          slides[i].style.opacity = 1;
-        }
         setTimeout(() => {
-          sliderLine.style.transition = "0s";
+          sliderLine.style.transition = "none";
           sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
-          setTimeout(() => (sliderLine.style.transition = "1s"));
+          slides.forEach((slide, i) => {
+            if (i <= countShow && i >= showId) {
+              slide.style.opacity = 1;
+              slide.classList.remove("hide-slide");
+            } else {
+              slide.style.opacity = 0;
+              slide.classList.remove("show-slide");
+            }
+          });
         }, 1000);
       }
     });
 
     buttonLeft.addEventListener("click", () => {
       buttonLeft.disabled = true;
+      sliderLine.style.transition = "1s";
       setTimeout(() => (buttonLeft.disabled = false), 1000);
       showId -= 1;
       slides[showId].style.opacity = 1;
@@ -85,9 +91,17 @@ window.addEventListener("DOMContentLoaded", () => {
       if (showId <= 0) {
         showId = slides.length - 4;
         setTimeout(() => {
-          sliderLine.style.transition = "0s";
+          sliderLine.style.transition = "none";
           sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
-          setTimeout(() => (sliderLine.style.transition = "1s"));
+          slides.forEach((slide, i) => {
+            if (i <= countShow + showId - 1 && i >= showId) {
+              slide.style.opacity = 1;
+              slide.classList.remove("hide-slide");
+            } else {
+              slide.style.opacity = 0;
+              slide.classList.remove("show-slide");
+            }
+          });
         }, 1000);
       }
     });
