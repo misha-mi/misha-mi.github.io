@@ -1,12 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
-  function sliderInit(sliderSelector) {
-    const slider = document.querySelector(sliderSelector);
+  sliderInit(document.querySelector(".about__slider-double"));
+  sliderInit(document.querySelector(".about__slider"));
+  document.querySelectorAll(".services__slider").forEach((item) => {
+    sliderInit(item);
+  });
+
+  function sliderInit(slider) {
     const sliderLine = slider.querySelector(".line");
     let slides = sliderLine.querySelectorAll(".slide");
     const buttonLeft = slider.querySelector(".slider__left");
     const buttonRight = slider.querySelector(".slider__right");
 
     if (sliderLine.clientWidth > slides[0].clientWidth * slides.length) {
+      slides.forEach((item) => (item.style.opacity = 1));
+      buttonLeft.parentElement.style.display = "none";
       return;
     }
 
@@ -49,16 +56,20 @@ window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => (buttonRight.disabled = false), 1000);
     };
 
+    const nextSlide = (showId, hideId) => {
+      slides[showId].style.opacity = 1;
+      slides[showId].classList.remove("hide-slide");
+      slides[showId].classList.add("show-slide");
+
+      slides[hideId].style.opacity = 0;
+      slides[hideId].classList.remove("show-slide");
+      slides[hideId].classList.add("hide-slide");
+    };
+
     buttonRight.addEventListener("click", (e) => {
       disabledButton();
       sliderLine.style.transition = "1s";
-      slides[showId + countShow].style.opacity = 1;
-      slides[showId + countShow].classList.remove("hide-slide");
-      slides[showId + countShow].classList.add("show-slide");
-
-      slides[showId].style.opacity = 0;
-      slides[showId].classList.remove("show-slide");
-      slides[showId].classList.add("hide-slide");
+      nextSlide(showId + countShow, showId);
 
       showId += 1;
       sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
@@ -84,13 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
       disabledButton();
       sliderLine.style.transition = "1s";
       showId -= 1;
-      slides[showId].style.opacity = 1;
-      slides[showId].classList.remove("hide-slide");
-      slides[showId].classList.add("show-slide");
-
-      slides[showId + countShow].style.opacity = 0;
-      slides[showId + countShow].classList.remove("show-slide");
-      slides[showId + countShow].classList.add("hide-slide");
+      nextSlide(showId, showId + countShow);
 
       sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
       if (showId <= 0) {
@@ -111,8 +116,4 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  sliderInit(".services__slider");
-  sliderInit(".about__slider-double");
-  sliderInit(".about__slider");
 });

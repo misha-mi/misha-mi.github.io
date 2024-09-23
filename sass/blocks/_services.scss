@@ -3,6 +3,12 @@
   background: linear-gradient($add-main-color, $main-color);
   position: relative;
   overflow-x: hidden;
+  &__tab {
+    display: none;
+    &-active {
+      display: block;
+    }
+  }
   &__title {
     text-align: center;
     font-weight: 300;
@@ -87,6 +93,9 @@
     &__img {
       height: 110px;
     }
+    &__desc {
+      font-size: 18px;
+    }
   }
 }
 
@@ -100,9 +109,6 @@
       width: 350px;
       &__img {
         height: 132px;
-      }
-      &__desc {
-        font-size: 18px;
       }
     }
   }
