@@ -42,10 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     slides = sliderLine.querySelectorAll(".slide");
 
-    buttonRight.addEventListener("click", (e) => {
+    const disabledButton = () => {
+      buttonLeft.disabled = true;
+      setTimeout(() => (buttonLeft.disabled = false), 1000);
       buttonRight.disabled = true;
-      sliderLine.style.transition = "1s";
       setTimeout(() => (buttonRight.disabled = false), 1000);
+    };
+
+    buttonRight.addEventListener("click", (e) => {
+      disabledButton();
+      sliderLine.style.transition = "1s";
       slides[showId + countShow].style.opacity = 1;
       slides[showId + countShow].classList.remove("hide-slide");
       slides[showId + countShow].classList.add("show-slide");
@@ -75,9 +81,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     buttonLeft.addEventListener("click", () => {
-      buttonLeft.disabled = true;
+      disabledButton();
       sliderLine.style.transition = "1s";
-      setTimeout(() => (buttonLeft.disabled = false), 1000);
       showId -= 1;
       slides[showId].style.opacity = 1;
       slides[showId].classList.remove("hide-slide");
@@ -108,4 +113,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   sliderInit(".services__slider");
+  sliderInit(".about__slider-double");
+  sliderInit(".about__slider");
 });
