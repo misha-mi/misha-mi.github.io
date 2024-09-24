@@ -12,11 +12,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const buttonRight = slider.querySelector(".slider__right");
 
     if (sliderLine.clientWidth > slides[0].clientWidth * slides.length) {
+      const countToFull = sliderLine.clientWidth / slides[0].clientWidth;
+      const gap =
+        (sliderLine.clientWidth % slides[0].clientWidth) / (countToFull - 1);
+      sliderLine.style.gap = gap + "px";
       slides.forEach((item) => (item.style.opacity = 1));
       buttonLeft.parentElement.style.display = "none";
       return;
     }
-
+    console.dir(sliderLine);
     let showId = 2;
     const countShow = Math.trunc(
       sliderLine.clientWidth / slides[0].clientWidth
@@ -58,12 +62,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const nextSlide = (showId, hideId) => {
       slides[showId].style.opacity = 1;
-      slides[showId].classList.remove("hide-slide");
       slides[showId].classList.add("show-slide");
 
       slides[hideId].style.opacity = 0;
-      slides[hideId].classList.remove("show-slide");
       slides[hideId].classList.add("hide-slide");
+      setTimeout(() => {
+        slides[showId].classList.remove("show-slide");
+        slides[hideId].classList.remove("hide-slide");
+      }, 1000);
     };
 
     buttonRight.addEventListener("click", (e) => {

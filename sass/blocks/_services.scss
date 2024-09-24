@@ -3,12 +3,6 @@
   background: linear-gradient($add-main-color, $main-color);
   position: relative;
   overflow-x: hidden;
-  &__tab {
-    display: none;
-    &-active {
-      display: block;
-    }
-  }
   &__title {
     text-align: center;
     font-weight: 300;
@@ -32,7 +26,6 @@
   &__wrapper {
     margin-top: 32px;
     display: flex;
-    justify-content: space-between;
   }
   &-item {
     width: 360px;

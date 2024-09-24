@@ -22,10 +22,55 @@
 }
 
 @keyframes show {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
+  }
+}
+
+.slider {
+  &__controll {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  &__left,
+  &__right {
+    cursor: pointer;
+    background-color: rgba(#fff, 0.4);
+    opacity: 0.6;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      display: block;
+      width: 4px;
+      height: 25px;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 25px;
+      display: block;
+      width: 4px;
+      height: 25px;
+      background-color: #fff;
+      transform: rotate(-45deg);
+    }
+  }
+  &__right {
+    transform: rotate(180deg);
   }
 }
