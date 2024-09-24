@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     navLink.addEventListener("click", (e) => {
       e.preventDefault();
       const blockId = navLink.getAttribute("href").replace("#", "");
-      document.scrollTo({
+      window.scrollTo({
         top: document.getElementById(blockId).offsetTop - navHeight,
         behavior: "smooth",
       });
