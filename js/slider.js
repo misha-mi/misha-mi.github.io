@@ -23,7 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
       buttonRight.style.display = "none";
       return;
     }
-    console.dir(sliderLine);
     let showId = 2;
     const countShow = Math.trunc(
       sliderLine.clientWidth / slides[0].clientWidth
