@@ -32,6 +32,7 @@
 
 .slider {
   &__controll {
+    height: 60px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -72,5 +73,19 @@
   }
   &__right {
     transform: rotate(180deg);
+  }
+  &_blue-button {
+    border: 2px solid $main-color;
+    background-color: rgba($main-color, 0.4);
+    &::after {
+      top: 8px;
+      left: 23px;
+      background-color: $main-color;
+    }
+    &::before {
+      bottom: 8px;
+      left: 23px;
+      background-color: $main-color;
+    }
   }
 }

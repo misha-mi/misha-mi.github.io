@@ -12,12 +12,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const buttonRight = slider.querySelector(".slider__right");
 
     if (sliderLine.clientWidth > slides[0].clientWidth * slides.length) {
-      const countToFull = sliderLine.clientWidth / slides[0].clientWidth;
+      const countToFull = Math.trunc(
+        sliderLine.clientWidth / slides[0].clientWidth
+      );
       const gap =
         (sliderLine.clientWidth % slides[0].clientWidth) / (countToFull - 1);
       sliderLine.style.gap = gap + "px";
       slides.forEach((item) => (item.style.opacity = 1));
-      buttonLeft.parentElement.style.display = "none";
+      buttonLeft.style.display = "none";
+      buttonRight.style.display = "none";
       return;
     }
     console.dir(sliderLine);
