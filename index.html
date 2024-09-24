@@ -17,10 +17,10 @@
               <div class="nav__burger-elem"></div>
             </div>
             <div class="nav__buttons">
-              <button class="button nav__button">Обо мне</button>
-              <button class="button nav__button">Услуги</button>
-              <button class="button nav__button">Отзывы</button>
-              <button class="button nav__button">Записаться</button>
+              <a class="button nav__button" href="#about">Обо мне</a>
+              <a class="button nav__button" href="#services">Услуги</a>
+              <a class="button nav__button" href="#reviews">Отзывы</a>
+              <a class="button nav__button" href="#sign">Записаться</a>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@
             <img src="img/big-neuron.png" alt="" class="header__services-bg" />
           </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
           <h2 class="about__title">Обо мне</h2>
           <div class="about__wrapper">
             <img src="./img/ava.png" alt="me" class="about__img" />
@@ -191,7 +191,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
         <h2 class="services__title">Услуги</h2>
         <div class="services__controllers-wrapper">
@@ -482,7 +482,7 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <div class="container">
         <h2 class="reviews__title">Отзывы</h2>
         <div class="reviews__controllers-wrapper">
@@ -724,6 +724,8 @@
         </div>
       </div>
     </section>
+    <section class="sign" id="sign"></section>
+    <script src="./js/scroll-to.js"></script>
     <script src="./js/slider.js"></script>
     <script src="./js/tab.js"></script>
   </body>
