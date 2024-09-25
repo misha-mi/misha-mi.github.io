@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
     sliderLine.append(slides[1].cloneNode(true));
 
     sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
-    setTimeout(() => (sliderLine.style.transition = "1s"));
+    setTimeout(() => (sliderLine.style.transition = "0.5s"));
 
     for (let i = 0; i < countShow; i++) {
       slides[i].style.opacity = 1;
@@ -57,12 +57,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const disabledButton = () => {
       buttonLeft.disabled = true;
-      setTimeout(() => (buttonLeft.disabled = false), 1000);
+      setTimeout(() => (buttonLeft.disabled = false), 500);
       buttonRight.disabled = true;
-      setTimeout(() => (buttonRight.disabled = false), 1000);
+      setTimeout(() => (buttonRight.disabled = false), 500);
     };
 
-    const nextSlide = (showId, hideId) => {
+    const changeSlide = (showId, hideId) => {
       slides[showId].style.opacity = 1;
       slides[showId].classList.add("show-slide");
 
@@ -71,13 +71,13 @@ window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         slides[showId].classList.remove("show-slide");
         slides[hideId].classList.remove("hide-slide");
-      }, 1000);
+      }, 500);
     };
 
-    buttonRight.addEventListener("click", (e) => {
+    const nextSlide = () => {
       disabledButton();
-      sliderLine.style.transition = "1s";
-      nextSlide(showId + countShow, showId);
+      sliderLine.style.transition = "0.5s";
+      changeSlide(showId + countShow, showId);
 
       showId += 1;
       sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
@@ -95,15 +95,15 @@ window.addEventListener("DOMContentLoaded", () => {
               slide.classList.remove("show-slide");
             }
           });
-        }, 1000);
+        }, 500);
       }
-    });
+    };
 
-    buttonLeft.addEventListener("click", () => {
+    const lastSlide = () => {
       disabledButton();
-      sliderLine.style.transition = "1s";
+      sliderLine.style.transition = "0.5s";
       showId -= 1;
-      nextSlide(showId, showId + countShow);
+      changeSlide(showId, showId + countShow);
 
       sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
       if (showId <= 0) {
@@ -120,8 +120,56 @@ window.addEventListener("DOMContentLoaded", () => {
               slide.classList.remove("show-slide");
             }
           });
-        }, 1000);
+        }, 500);
       }
+    };
+
+    buttonRight.addEventListener("click", nextSlide);
+
+    buttonLeft.addEventListener("click", lastSlide);
+    // slide
+    let posX1, swipeX, posY1, swipeY;
+    let isScroll = false,
+      isSlide = false;
+
+    sliderLine.addEventListener("touchstart", (e) => {
+      posX1 = e.changedTouches[0].clientX;
+      posY1 = e.changedTouches[0].clientY;
+      console.log(posY1, posX1);
+      document.addEventListener("touchmove", swipeAction);
+      document.addEventListener("touchend", swipeEnd);
     });
+
+    function swipeAction(e) {
+      swipeX = posX1 - e.changedTouches[0].clientX;
+      swipeY = posY1 - e.changedTouches[0].clientY;
+      if (!isScroll && !isSlide) {
+        if (Math.abs(swipeX) - Math.abs(swipeY) < 0 && Math.abs(swipeY) > 10) {
+          console.log("isScroll");
+          isScroll = true;
+        } else if (Math.abs(swipeX) > 10) {
+          console.log("isSlide");
+          isSlide = true;
+        }
+      }
+
+      if (isSlide) {
+        sliderLine.style.transition = "none";
+        sliderLine.style.transform = `translateX(-${
+          movedWidht * showId + swipeX
+        }px)`;
+      }
+    }
+    function swipeEnd(e) {
+      isScroll = false;
+      isSlide = false;
+      document.removeEventListener("touchmove", swipeAction);
+      document.removeEventListener("touchend", swipeEnd);
+      if (swipeX > 100) {
+        nextSlide();
+      } else if (swipeX < -100) {
+        lastSlide();
+      }
+    }
   }
 });
