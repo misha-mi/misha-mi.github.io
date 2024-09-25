@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
     sliderLine.append(slides[1].cloneNode(true));
 
     sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
-    setTimeout(() => (sliderLine.style.transition = "0.5s"));
+    setTimeout(() => (sliderLine.style.transition = "0.8s"));
 
     for (let i = 0; i < countShow; i++) {
       slides[i].style.opacity = 1;
@@ -58,9 +58,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const disabledButton = () => {
       buttonLeft.disabled = true;
-      setTimeout(() => (buttonLeft.disabled = false), 500);
+      setTimeout(() => (buttonLeft.disabled = false), 800);
       buttonRight.disabled = true;
-      setTimeout(() => (buttonRight.disabled = false), 500);
+      setTimeout(() => (buttonRight.disabled = false), 800);
     };
 
     const changeSlide = (showId, hideId) => {
@@ -72,12 +72,12 @@ window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         slides[showId].classList.remove("show-slide");
         slides[hideId].classList.remove("hide-slide");
-      }, 500);
+      }, 800);
     };
 
     const nextSlide = () => {
       disabledButton();
-      sliderLine.style.transition = "0.5s";
+      sliderLine.style.transition = "0.8s";
       changeSlide(showId + countShow, showId);
 
       showId += 1;
@@ -96,13 +96,13 @@ window.addEventListener("DOMContentLoaded", () => {
               slide.classList.remove("show-slide");
             }
           });
-        }, 500);
+        }, 800);
       }
     };
 
     const lastSlide = () => {
       disabledButton();
-      sliderLine.style.transition = "0.5s";
+      sliderLine.style.transition = "0.8s";
       showId -= 1;
       changeSlide(showId, showId + countShow);
 
@@ -121,7 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
               slide.classList.remove("show-slide");
             }
           });
-        }, 500);
+        }, 800);
       }
     };
 
@@ -171,13 +171,13 @@ window.addEventListener("DOMContentLoaded", () => {
         } else if (swipeX < -75) {
           lastSlide();
         } else {
-          sliderLine.style.transition = "0.5s";
+          sliderLine.style.transition = "0.8s";
           sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
         }
       }
       isScroll = false;
       isSlide = false;
-      setTimeout(() => (isActiveSlide = false), 500);
+      setTimeout(() => (isActiveSlide = false), 800);
     }
   }
 });
