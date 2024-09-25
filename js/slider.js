@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let slides = sliderLine.querySelectorAll(".slide");
     const buttonLeft = slider.querySelector(".slider__left");
     const buttonRight = slider.querySelector(".slider__right");
+    let isActiveSlide = false;
 
     if (sliderLine.clientWidth > slides[0].clientWidth * slides.length) {
       const countToFull = Math.trunc(
@@ -133,11 +134,13 @@ window.addEventListener("DOMContentLoaded", () => {
       isSlide = false;
 
     sliderLine.addEventListener("touchstart", (e) => {
-      posX1 = e.changedTouches[0].clientX;
-      posY1 = e.changedTouches[0].clientY;
-      console.log(posY1, posX1);
-      document.addEventListener("touchmove", swipeAction);
-      document.addEventListener("touchend", swipeEnd);
+      if (!isActiveSlide) {
+        posX1 = e.changedTouches[0].clientX;
+        posY1 = e.changedTouches[0].clientY;
+        console.log(posY1, posX1);
+        document.addEventListener("touchmove", swipeAction);
+        document.addEventListener("touchend", swipeEnd);
+      }
     });
 
     function swipeAction(e) {
@@ -160,19 +163,24 @@ window.addEventListener("DOMContentLoaded", () => {
         }px)`;
       }
     }
-    function swipeEnd(e) {
-      isScroll = false;
-      isSlide = false;
+    function swipeEnd() {
       document.removeEventListener("touchmove", swipeAction);
       document.removeEventListener("touchend", swipeEnd);
-      if (swipeX > 100) {
-        nextSlide();
-      } else if (swipeX < -100) {
-        lastSlide();
-      } else {
-        sliderLine.style.transition = "0.5s";
-        sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
+      if (isSlide) {
+        isActiveSlide = true;
+        disabledButton();
+        if (swipeX > 75) {
+          nextSlide();
+        } else if (swipeX < -75) {
+          lastSlide();
+        } else {
+          sliderLine.style.transition = "0.5s";
+          sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
+        }
       }
+      isScroll = false;
+      isSlide = false;
+      setTimeout(() => (isActiveSlide = false), 500);
     }
   }
 });
