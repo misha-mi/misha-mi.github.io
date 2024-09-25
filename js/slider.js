@@ -169,6 +169,9 @@ window.addEventListener("DOMContentLoaded", () => {
         nextSlide();
       } else if (swipeX < -100) {
         lastSlide();
+      } else {
+        sliderLine.style.transition = "0.5s";
+        sliderLine.style.transform = `translateX(-${movedWidht * showId}px)`;
       }
     }
   }
