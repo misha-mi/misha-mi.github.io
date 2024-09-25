@@ -137,7 +137,6 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!isActiveSlide) {
         posX1 = e.changedTouches[0].clientX;
         posY1 = e.changedTouches[0].clientY;
-        console.log(posY1, posX1);
         document.addEventListener("touchmove", swipeAction);
         document.addEventListener("touchend", swipeEnd);
       }
@@ -148,10 +147,8 @@ window.addEventListener("DOMContentLoaded", () => {
       swipeY = posY1 - e.changedTouches[0].clientY;
       if (!isScroll && !isSlide) {
         if (Math.abs(swipeX) - Math.abs(swipeY) < 0 && Math.abs(swipeY) > 10) {
-          console.log("isScroll");
           isScroll = true;
         } else if (Math.abs(swipeX) > 10) {
-          console.log("isSlide");
           isSlide = true;
         }
       }

@@ -14,10 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
       e.target.classList.contains("nav__burger-elem")
     ) {
       toggle();
-    } else if (
-      e.target.classList.contains("nav__button") &&
-      nav.classList.contains("nav__open")
-    ) {
+    } else if (nav.classList.contains("nav__open")) {
       toggle();
     }
   });
