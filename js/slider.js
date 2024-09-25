@@ -150,6 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
           isScroll = true;
         } else if (Math.abs(swipeX) > 10) {
           isSlide = true;
+          document.body.style.overflow = "hidden";
         }
       }
 
@@ -165,6 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
       document.removeEventListener("touchend", swipeEnd);
       if (isSlide) {
         isActiveSlide = true;
+        document.body.style.overflow = "auto";
         disabledButton();
         if (swipeX > 75) {
           nextSlide();
