@@ -1,0 +1,67 @@
+.sign {
+  background: linear-gradient($add-main-color, $main-color);
+  padding: 40px 0 0;
+  overflow: hidden;
+  &__wrapper {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    gap: 40px;
+  }
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  &__services-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__service {
+    display: block;
+    box-shadow: none;
+  }
+  &__title {
+    @include title($main-text-color);
+  }
+}
+
+@media (max-width: 1200px) {
+  .sign {
+    &__wrapper {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .sign {
+    &__wrapper {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .sign {
+    &__service {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .sign {
+    &__services-wrapper {
+      align-self: flex-start;
+      flex-wrap: nowrap;
+      justify-content: start;
+    }
+    &__form {
+      max-width: 350px;
+      width: 100%;
+    }
+  }
+}

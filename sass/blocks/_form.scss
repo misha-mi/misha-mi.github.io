@@ -1,0 +1,69 @@
+.form {
+  width: 350px;
+  &__input {
+    width: 100%;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 25px;
+    font-size: 25px;
+    border: none;
+    margin-bottom: 20px;
+    // @include inshadow(2px, rgba(0, 0, 0, 0.25));
+    &::placeholder {
+      color: $add-elements-color;
+      font-family: "Lobster";
+    }
+  }
+  &__checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    color: $main-text-color;
+  }
+  &__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  &__checkbox {
+    position: absolute;
+    appearance: none;
+  }
+  &__checkbox-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    background: $main-text-color;
+    transition: 0.3s;
+  }
+  &__checkbox:checked + .form__checkbox-view {
+    background-color: $main-elements-color;
+  }
+  &__a-politic {
+    color: $main-text-color;
+    text-decoration: underline;
+  }
+  &__button {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: none;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    &__checkbox-wrapper {
+      font-size: 13px;
+    }
+  }
+}
