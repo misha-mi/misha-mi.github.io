@@ -15,8 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const buttonRight = slider.querySelector(".slider__right");
     let isActiveSlide = false;
 
-    window.addEventListener("resize", () => window.location.reload());
-
     if (sliderLine.clientWidth > slides[0].clientWidth * slides.length) {
       const countToFull = Math.trunc(
         sliderLine.clientWidth / slides[0].clientWidth
