@@ -54,11 +54,6 @@
 }
 @media (max-width: 576px) {
   .sign {
-    &__services-wrapper {
-      align-self: flex-start;
-      flex-wrap: nowrap;
-      justify-content: start;
-    }
     &__form {
       max-width: 350px;
       width: 100%;

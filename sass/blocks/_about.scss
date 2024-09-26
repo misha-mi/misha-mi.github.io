@@ -163,5 +163,10 @@
     &__info {
       font-size: 14px;
     }
+    &__slide {
+      width: 100%;
+      max-width: 350px;
+      height: 200px;
+    }
   }
 }
