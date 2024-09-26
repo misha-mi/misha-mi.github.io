@@ -4,6 +4,9 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".services__slider").forEach((item) => {
     sliderInit(item);
   });
+  document.querySelectorAll(".reviews__slider").forEach((item) => {
+    sliderInit(item);
+  });
 
   function sliderInit(slider) {
     const sliderLine = slider.querySelector(".line");
