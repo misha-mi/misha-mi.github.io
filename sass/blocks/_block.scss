@@ -1,0 +1,20 @@
+.block {
+  &__container {
+    width: 1000px;
+    margin: auto;
+    padding: 24px 0;
+  }
+  &__title {
+    text-align: center;
+    @include title($main-color);
+  }
+  &__text {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .block__container {
+    width: 100%;
+  }
+}

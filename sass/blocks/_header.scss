@@ -57,6 +57,40 @@
       left: 278px;
     }
   }
+  &-service {
+    &__container {
+      width: 1000px;
+      margin: auto;
+    }
+    &__title {
+      padding: 24px 0;
+      text-align: center;
+      @include title($main-color);
+    }
+    &__content {
+      margin-top: 24px;
+      display: flex;
+      gap: 45px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    &__img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-service__container {
+    width: auto;
+  }
 }
 
 @media (max-width: 992px) {

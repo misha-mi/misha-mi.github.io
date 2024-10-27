@@ -32,14 +32,6 @@ body {
   }
 }
 
-.block {
-  margin: 200px auto;
-  width: 200px;
-  height: 200px;
-  background-color: $main-color;
-  @include shadow(4px, rgba(0, 0, 0, 0.25));
-}
-
 .wrapper {
   position: relative;
   background-image: url("../../img/headers-bg.png");
@@ -66,3 +58,4 @@ body {
 @import "blocks/slider";
 @import "blocks/footer";
 @import "blocks/tabs";
+@import "blocks/block";
